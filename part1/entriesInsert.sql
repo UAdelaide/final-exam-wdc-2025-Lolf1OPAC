@@ -12,7 +12,7 @@ VALUES
 ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small'),
 ((SELECT user_id FROM Users WHERE username = 'thanos2007'), 'JeffBezos', 'large'),
 ((SELECT user_id FROM Users WHERE username = 'iamironman69'), 'Thanos', 'small'),
-((SELECT user_id FROM Users WHERE username = 'carol123'), 'Charlie', 'medium');
+((SELECT user_id FROM Users WHERE username = 'thanos2007'), 'HulkyBoy', 'large');
 
 -- Insert five walk requests using subqueries to find dog_id from dog name
 INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
