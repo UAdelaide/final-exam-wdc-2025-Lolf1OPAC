@@ -9,7 +9,7 @@ app.use(express.json());
 
 // ✅ configure session
 app.use(session({
-  secret: 'jesusisking', // enc
+  secret: 'jesusisking', // encrypts the cookie's session ID that the brows
   resave: false,
   saveUninitialized: false,
   cookie: {
