@@ -48,7 +48,7 @@
 // get current user id through api call
         async function getCurrentUser() {
           try {
-            const res = await fetch('/api/users/me'); 
+            const res = await fetch('/api/users/me'); // Fetch current loggedin user info
             const user = await res.json();
             userId.value = user.user_id;
           } catch (err) {
