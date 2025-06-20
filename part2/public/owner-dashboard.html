@@ -24,7 +24,9 @@
           <div class="mb-3">
             <label class="form-label">Select Your Dog</label>
             <!-- Dropdown to select a dog -->
-             <!-- 1) whatever dog is select, its id goes into form.dog_id
+             <!--
+              1) whatever dog is select, its id goes into form.dog_id
+              2)
               -->
             <select v-model="form.dog_id" class="form-select" required>
             <option v-for="dog in dogs" :value="dog.dog_id">
