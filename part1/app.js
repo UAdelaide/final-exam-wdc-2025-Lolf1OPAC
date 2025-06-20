@@ -3,7 +3,7 @@ const mysql = require('mysql2/promise');
 const app = express();
 const port = 8080;
 
-const pool = mysql.createPool({
+const poolQ = mysql.createPool({
   host: 'localhost',
   user: 'root',
   password: '',
@@ -13,7 +13,7 @@ const pool = mysql.createPool({
 // /api/dogs
 app.get('/api/dogs', async (req, res) => {
   try {
-    const [rows] = await pool.query(`
+    const [rows] = await poolQ.query(`
       SELECT d.name AS dog_name, d.size, u.username AS owner_username
       FROM Dogs d
       JOIN Users u ON d.owner_id = u.user_id;
@@ -28,7 +28,7 @@ app.get('/api/dogs', async (req, res) => {
 // /api/walkrequests/open
 app.get('/api/walkrequests/open', async (req, res) => {
   try {
-    const [rows] = await pool.query(`
+    const [rows] = await poolQ.query(`
       SELECT w.request_id, d.name AS dog_name, w.requested_time, w.duration_minutes, w.location, u.username AS owner_username
       FROM WalkRequests w
       JOIN Dogs d ON w.dog_id = d.dog_id
