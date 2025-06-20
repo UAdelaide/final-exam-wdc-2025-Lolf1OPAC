@@ -9,6 +9,7 @@ app.use(express.json());
 
 app.use(session({
   secret: 'jesusisking', // encrypts the cookie's session ID that the browsers sends with each request
+  saveUninitialized: false, // do not create session until something stored
   resave: false, // do not save session if it was never modified
   cookie: {
     maxAge: 1000 * 60 * 30, // cookie expires after 30 minutes and force logs out user, prevent xss attacks and identity theft
