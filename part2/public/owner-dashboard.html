@@ -26,9 +26,9 @@
             <!-- Dropdown to select a dog -->
             <select v-model="form.dog_id" class="form-select" required>
             <option v-for="dog in dogs" :key="dog.dog_id" :value="dog.dog_id">
-              {{ dog.name }} 
+              {{ dog.name }}
             </option>
-          </select>
+            </select>
 
           </div>
           <div class="mb-3">
