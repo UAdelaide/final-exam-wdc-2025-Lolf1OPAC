@@ -11,6 +11,7 @@
   <!-- the following code are utilised from the bootstrap 5 documentations for forms -->
   <div id="app" class="container">
   <h2 class="text-primary">Welcome to the Dog<br>Walking Service!</h2>
+  
     <form @submit.prevent="login">   <!-- prevents reloading window and actions are sent to login fucntion -->
       <div class="mb-4">
         <label class="form-label">Username</label>
@@ -22,6 +23,7 @@
       </div>
       <button type="submit" class="btn btn-primary">Log In</button> <!-- form submission action, and the request is sent to the login function due to @submit.prevent in the previous code -->
     </form>
+
     <div v-if="error" class="alert alert-danger mt-3">{{ error }}</div>
   </div>
 
