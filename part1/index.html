@@ -64,7 +64,7 @@ createApp({
     async function fetchNewDog() {
       try {
         const result = await fetch('https://dog.ceo/api/breeds/image/random');
-        const data = await res.json();
+        const data = await result.json();
         dogImageUrl.value = data.message;
       } catch {
         alert('Failed to load new dog image.');
