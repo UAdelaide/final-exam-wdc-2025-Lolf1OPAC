@@ -63,9 +63,7 @@
               window.location.href = 'owner-dashboard.html';
             } else if (result.user.role === 'walker') {
               window.location.href = 'walker-dashboard.html';
-            } else {
-              this.error = 'Unknown user role';
-            }
+            } 
 
           } catch (err) {
             this.error = 'Network error';
