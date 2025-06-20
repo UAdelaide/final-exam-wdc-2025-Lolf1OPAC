@@ -6,7 +6,7 @@ const db = require('../models/db');
 router.get('/mydogs', async (req, res) => {
   try {
     const ownerId = req.session.user.user_id;
-    // ch
+    // match the owner id with the matching dog ids in the data
     const [dogs] = await db.query(`
       SELECT dog_id, name, size FROM Dogs WHERE owner_id = ?
     `, [ownerId]);
