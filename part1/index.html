@@ -60,7 +60,7 @@ const { createApp, ref } = Vue;
 
 createApp({
   setup() {
-    const dogImageUrl = ref('https://www.pawandglory.com/products/thanos-marvel-inspired-custom-digital-pet-portrait');
+    const dogImageUrl = ref('https://images.dog.ceo/breeds/hound-afghan/n02088094_1003.jpg');
     async function fetchNewDog() {
       try {
         const result = await fetch('https://dog.ceo/api/breeds/image/random');
