@@ -32,7 +32,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
       FROM WalkRequests wReq
       JOIN Dogs doggy ON wReq.dog_id = doggy.dog_id
       JOIN Users user ON doggy.owner_id = user.user_id
-      WHERE w.status = 'open';
+      WHERE wReq.status = 'open';
     `);
     res.json(rows);
   } catch (err) {
