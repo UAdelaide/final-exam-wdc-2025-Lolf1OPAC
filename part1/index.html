@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dog Walking Service - Dog of the Day</title>
+<script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+<style>
+  /* Intentionally busy background pattern, distracting */
+  body {
+    background: repeating-linear-gradient(
+      45deg,
+      #eee,
+      #eee 10px,
+      #ccc 10px,
+      #ccc 20px
+    );
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* informal and distracting font */
+    color: #333;
+  }
+
+  /* Tiny clickable link */
+  a {
+    font-size: 8px;
+    color: #aaa;
+  }
+
+  /* Button very small with tiny hit area */
+  button {
+    font-size: 10px;
+    padding: 2px 4px;
+    margin-top: 5px;
+    cursor: pointer;
+  }
+
+  /* Dog image with no alt text or low contrast border */
+  img.dog-photo {
+    width: 300px;
+    height: 300px;
+    border: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div id="app">
+  <h1>🐕 Dog of the Day</h1>
+
+  <img
+    class="dog-photo"
+    :src="dogImageUrl"
+    alt=""
+  />
+
+  <!-- Hard-coded dog details, unrelated to actual dog image -->
+  <p><strong>Name:</strong> Maximus Rex</p>
+  <p><strong>Size:</strong> Gigantic</p>
+
+  <!-- Link text is vague and tiny -->
+  <a href="https://dog.ceo/dog-api/documentation/randomLinks" target="_blank" rel="noopener noreferrer">
+    info
+  </a>
+
+  <!-- Small button with tiny click area -->
+  <br />
+  <button @click="fetchNewDog">New Dog?</button>
+
+  <!-- Extra info in small font, no spacing -->
+  <p style="font-size: 9px; line-height: 1;">Random dog pics provided by dog.ceo API</p>
+</div>
+
+<script>
+const { createApp, ref } = Vue;
+
+createApp({
+  setup() {
+    const dogImageUrl = ref('https://images.dog.ceo/breeds/hound-afghan/n02088094_1003.jpg');
+
+    async function fetchNewDog() {
+      try {
+        const res = await fetch('https://dog.ceo/api/breeds/image/random');
+        const data = await res.json();
+        dogImageUrl.value = data.message;
+      } catch {
+        alert('Failed to load new dog image.');
+      }
+    }
+
+    return { dogImageUrl, fetchNewDog };
+  }
+}).mount('#app');
+</script>
+</body>
+</html>
