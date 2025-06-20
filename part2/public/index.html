@@ -56,17 +56,14 @@
               this.error = result.error;
               return;
             }
-
-            // Successful login
-            // Redirect depending on role
+            // if user logRedirect depending on role
             if (result.user.role === 'owner') {
               window.location.href = 'owner-dashboard.html';
             } else if (result.user.role === 'walker') {
               window.location.href = 'walker-dashboard.html';
-            } 
-
+            }
           } catch (err) {
-            this.error = 'Network error';
+            this.error = 'error';
           }
         }
       }
