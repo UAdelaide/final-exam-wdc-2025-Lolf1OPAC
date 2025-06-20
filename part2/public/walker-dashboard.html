@@ -97,6 +97,7 @@
         }
 
         onMounted(() => {
+          await getCurrentUser(); // Get current user on mount
           loadWalkRequests();
         });
 
