@@ -43,7 +43,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
 // /api/walkers/summary
 app.get('/api/walkers/summary', async (req, res) => {
   try {
-    const [rows] = await poolQ.query(`
+    const [sum] = await poolQ.query(`
       SELECT
         user.username AS walker_username,
         COUNT(rating.rating_id) AS total_ratings,
@@ -56,7 +56,7 @@ app.get('/api/walkers/summary', async (req, res) => {
       WHERE user.role = 'walker'
       GROUP BY user.user_id;
     `);
-    res.json(rows);
+    res.json(sum);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch walker summary' });
   }
