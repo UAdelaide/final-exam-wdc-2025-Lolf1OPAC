@@ -9,9 +9,9 @@ app.use(express.json());
 
 // ✅ configure session
 app.use(session({
-  secret: 'jesusisking', // encrypts the cookie's session ID that the brows
-  resave: false,
-  saveUninitialized: false,
+  secret: 'jesusisking', // encrypts the cookie's session ID that the browsers sends with each request
+  resave: false, // do not save session if it was never modified
+  saveUninitialized: false, 
   cookie: {
     httpOnly: true,
     maxAge: 1000 * 60 * 60 // 1 hour
