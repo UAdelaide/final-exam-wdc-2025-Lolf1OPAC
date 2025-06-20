@@ -1,4 +1,4 @@
-// created api route for dogs
+// created api route for gettings dogs owned by the current logged owner
 const express = require('express');
 const router = express.Router();
 const db = require('../models/db');
