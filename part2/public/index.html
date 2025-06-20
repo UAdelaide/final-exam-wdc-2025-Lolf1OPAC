@@ -56,7 +56,7 @@
               this.error = result.error;
               return;
             }
-            // if user logRedirect depending on role
+            // if user logs in correctly, they are then redirect depending on role in database owner or walker
             if (result.user.role === 'owner') {
               window.location.href = 'owner-dashboard.html';
             } else if (result.user.role === 'walker') {
