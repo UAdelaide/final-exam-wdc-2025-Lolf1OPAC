@@ -46,7 +46,7 @@
             const res = await fetch('/api/users/login', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ email: this.username, password: this.password }) // backend expects email, but your DB has username; we can change backend or send username here as "email"
+              body: JSON.stringify({ username: this.username, password: this.password }) // backend expects email, but your DB has username; we can change backend or send username here as "email"
             });
 
             const result = await res.json();
