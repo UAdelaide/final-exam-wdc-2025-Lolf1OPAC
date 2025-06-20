@@ -52,10 +52,6 @@
 
             const result = await res.json();
 
-            if (!res.ok) {
-              this.error = result.error || 'Login failed';
-              return;
-            }
 
             // Successful login
             // Redirect depending on role
