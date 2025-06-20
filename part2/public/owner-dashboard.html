@@ -30,9 +30,7 @@
               3) sets the actual value (id) that goes into the form
               -->
             <select v-model="form.dog_id" class="form-select" required>
-            <option v-for="dog in dogs" :value="dog.dog_id">
-              {{ dog.name }}
-            </option>
+            <option v-for="dog in dogs" :value="dog.dog_id">{{ dog.name }}</option>
             </select>
 
           </div>
