@@ -3,7 +3,6 @@ const mysql = require('mysql2/promise');
 const app = express();
 const port = 8080;
 
-// Create MySQL connection pool
 const pool = mysql.createPool({
   host: 'localhost',
   user: 'root',
