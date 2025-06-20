@@ -4,8 +4,8 @@ VALUES
 ('alice123', 'alice@example.com', 'hashed123', 'owner'),
 ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
 ('carol123', 'carol@example.com', 'hashed789', 'owner'),
-('thanos2007', 'david@example.com', 'hashed420', 'w'),
-('iamironman69', 'emily@example.com', 'hashed999', 'owner');
+('thanos2007', 'thanos@example.com', 'hashed420', 'owner'),
+('iamironman69', 'ironman@example.com', 'hashed999', 'walker');
 
 -- Insert five dogs using subqueries to find owner_id from username
 INSERT INTO Dogs (owner_id, name, size)
