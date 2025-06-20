@@ -42,7 +42,7 @@
 // functions declarations
       methods: {
         async login() {
-          this.error = '';
+          this.error = ''; // clear previous errors when pressing login
           try {
             const res = await fetch('/api/users/login', {
               method: 'POST',
