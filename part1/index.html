@@ -61,15 +61,9 @@ const { createApp, ref } = Vue;
 createApp({
   setup() {
     const dogImageUrl = ref('https://images.dog.ceo/breeds/spaniel-welsh/n02102177_3928.jpg');
-    async function fetchNewDog() {
-      try {
-        const result = await fetch('https://dog.ceo/api/breeds/image/random');
-        const data = await result.json();
-        dogImageUrl.value = data.message;
-      } catch {
-        alert('Failed to load new dog image.');
-      }
-    }
+
+    const fetchNewDog = async () =>
+      dogImageUrl.value = (await fetch('https://dog.ceo/api/breeds/image/random').then(r => r.json())).message;
 
     return { dogImageUrl, fetchNewDog };
   }
