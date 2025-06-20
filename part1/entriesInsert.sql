@@ -10,8 +10,8 @@ INSERT INTO Dogs (owner_id, name, size)
 VALUES
 ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium'),
 ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small'),
-((SELECT user_id FROM Users WHERE username = 'thanos2007'), 'Rocky', 'large'),
-((SELECT user_id FROM Users WHERE username = 'alice123'), 'Luna', 'small'),
+((SELECT user_id FROM Users WHERE username = 'thanos2007'), 'JeffBezos', 'large'),
+((SELECT user_id FROM Users WHERE username = 'iamironman69'), 'Thanos', 'small'),
 ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Charlie', 'medium');
 
 -- Insert five walk requests using subqueries to find dog_id from dog name
