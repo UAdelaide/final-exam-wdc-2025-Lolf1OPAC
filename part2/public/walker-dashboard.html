@@ -50,9 +50,9 @@
           try {
             const res = await fetch('/api/users/me'); // Fetch current loggedin user info
             const user = await res.json();
-            userId.value = user.user_id; // reactive userId is set to the value collected from the database 
+            userId.value = user.user_id; // reactive userId is set to the value collected from the database
           } catch (err) {
-            error.value = 'FailURE to get and access current user';
+            error.value = 'FAILURE to get and access current user';
           }
         }
 
