@@ -40,6 +40,7 @@ router.post('/login', async (req, res) => {
   const { username, password } = req.body;
 
   try {
+    // changed from email (originally) to username
     const [rows] = await db.query(`
       SELECT user_id, username, role FROM Users
       WHERE username = ? AND password_hash = ?
@@ -56,4 +57,4 @@ router.post('/login', async (req, res) => {
 });
 
 
-module.exports = router;
+module.expor
