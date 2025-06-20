@@ -52,7 +52,7 @@
               body: JSON.stringify({ username: this.username, password: this.password })
             });
             const result = await res.json(); // stores result
-            if (!res.ok) {
+            if (!res.ok) { //error handling
               this.error = result.error;
               return;
             }
