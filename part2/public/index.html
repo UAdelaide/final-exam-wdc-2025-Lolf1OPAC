@@ -43,7 +43,6 @@
       methods: {
         async login() {
           this.error = '';
-
           try {
             const res = await fetch('/api/users/login', {
               method: 'POST',
