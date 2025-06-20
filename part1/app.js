@@ -36,7 +36,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
     `);
     res.json(walkRequestOpen);
   } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch openwalk requests' });
+    res.status(500).json({ error: 'Failed to fetch the openwalk requests' });
   }
 });
 
@@ -58,7 +58,7 @@ app.get('/api/walkers/summary', async (req, res) => {
     `);
     res.json(sum);
   } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch walker summary' });
+    res.status(500).json({ error: 'Failed to fetch the walker summary' });
   }
 });
 
