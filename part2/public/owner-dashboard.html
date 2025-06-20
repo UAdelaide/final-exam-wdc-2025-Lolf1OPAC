@@ -139,7 +139,7 @@
         async function loadDogs() {
           try {
             const res = await fetch('/api/dogs/mydogs');
-            if (!res.ok) throw new Error('Failed to load dogs');
+            if (!res.ok) throw new Error('cannot load dogs, you may not have any dog entries recorded in the database');
             dogs.value = await res.json();
           } catch (err) {
             error.value = err.message;
