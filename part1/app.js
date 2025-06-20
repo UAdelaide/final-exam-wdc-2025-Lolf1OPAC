@@ -46,8 +46,8 @@ app.get('/api/walkers/summary', async (req, res) => {
     const [rows] = await poolQ.query(`
       SELECT
         user.username AS walker_username,
-        COUNT(r.rating_id) AS total_ratings,
-        ROUND(AVG(r.rating), 1) AS average_rating,
+        COUNT(rating.rating_id) AS total_ratings,
+        ROUND(AVG(rating.rating), 1) AS average_rating,
         COUNT(CASE WHEN w.status = 'completed' THEN 1 END) AS completed_walks
       FROM Users user
       LEFT JOIN WalkApplications app ON user.user_id = app.walker_id AND app.status = 'accepted'
