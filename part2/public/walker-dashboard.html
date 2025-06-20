@@ -44,7 +44,7 @@
         const walks = ref([]);
         const message = ref('');
         const error = ref('');
-        const user = ref(null); //reactive user variable 
+        const user = ref(null); //reactive user variable and will auto update page if it changes
 // get current user id through api call
         async function getCurrentUser() {
           try {
