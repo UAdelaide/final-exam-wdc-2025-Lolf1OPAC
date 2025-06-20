@@ -9,7 +9,7 @@ app.use(express.json());
 
 // ✅ configure session
 app.use(session({
-  secret: 'supersecretkey', // r
+  secret: 'jesusisking', // 
   resave: false,
   saveUninitialized: false,
   cookie: {
