@@ -14,9 +14,9 @@ const poolQ = mysql.createPool({
 app.get('/api/dogs', async (req, res) => {
   try {
     const [rows] = await poolQ.query(`
-      SELECT doggy.name AS dog_name, doggy.size, u.username AS owner_username
+      SELECT doggy.name AS dog_name, doggy.size, user.username AS owner_username
       FROM Dogs doggy
-      JOIN Users user ON d.owner_id = u.user_id;
+      JOIN Users user ON doggy.owner_id = user.user_id;
     `);
     res.json(rows);
   } catch (err) {
