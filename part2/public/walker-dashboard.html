@@ -71,7 +71,7 @@
             const res = await fetch(`/api/walks/${requestId}/apply`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ walker_id: userId.value }) // 
+              body: JSON.stringify({ walker_id: userId.value }) // Use the reactive userId to apply for the walk, no longer hard coded
             });
             const result = await res.json();
 
