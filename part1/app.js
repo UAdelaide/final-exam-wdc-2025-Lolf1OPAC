@@ -6,7 +6,7 @@ const port = 8080;
 // Create a pool for MySQL
 const pool = mysql.createPool({
   host: 'localhost',
-  user: 'your_username',
+  user: 'root',
   password: 'your_password',
   database: 'DogWalkService'
 });
