@@ -45,10 +45,10 @@
         const message = ref('');
         const error = ref('');
         const user = ref(null);
-// get current user id through api call 
+// get current user id through api call
         async function getCurrentUser() {
           try {
-            const res = await fetch('/api/users/me');
+            const res = await fetch('/api/users/me'); 
             const user = await res.json();
             userId.value = user.user_id;
           } catch (err) {
