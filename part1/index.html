@@ -62,7 +62,7 @@ createApp({
   setup() {
     const hardCodeDog = ref('https://images.dog.ceo/breeds/spaniel-welsh/n02102177_3928.jpg');
     const fetchNewDog = async () =>
-      hardCodeDog.value = (await fetch('https://dog.ceo/api/breeds/image/random').then(r => r.json())).message;
+    hardCodeDog.value = (await fetch('https://dog.ceo/api/breeds/image/random').then(r => r.json())).message;
 
     return { hardCodeDog, fetchNewDog };
   }
