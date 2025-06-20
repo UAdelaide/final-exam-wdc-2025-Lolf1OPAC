@@ -13,7 +13,7 @@ app.use(session({
   resave: false, // do not save session if it was never modified
   cookie: {
     httpOnly: true, // cookie cant be tampered with by client-side js
-    maxAge: 1000 * 60 * 30 // 1 hour
+    maxAge: 1000 * 60 * 30 // cookie expires after 30 minutes and force logs out user, prevent xss attacks and identity theft
   }
 }));
 
