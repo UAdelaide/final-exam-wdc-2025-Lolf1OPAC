@@ -46,16 +46,16 @@
         const error = ref('');
         const user = ref(null);
 
-            async function getCurrentUser() {
-      try {
-        const res = await fetch('/api/users/me');
-        if (!res.ok) throw new Error('Not logged in');
-        const user = await res.json();
-        userId.value = user.user_id;
-      } catch (err) {
-        error.value = 'Failed to get current user';
+        async function getCurrentUser() {
+        try {
+          const res = await fetch('/api/users/me');
+          if (!res.ok) throw new Error('Not logged in');
+          const user = await res.json();
+          userId.value = user.user_id;
+        } catch (err) {
+          error.value = 'Failed to get current user';
+        }
       }
-    }
 
         async function loadWalkRequests() {
           try {
