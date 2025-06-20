@@ -8,7 +8,7 @@
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body class="bg-light">
-  <!-- the following code are utilised  -->
+  <!-- the following code are utilised from the bootstrap 5 documentations for forms -->
   <div id="app" class="container">
   <h2 class="text-primary">Welcome to the Dog<br>Walking Service!</h2>
     <form @submit.prevent="login">
@@ -20,6 +20,7 @@
         <label class="form-label">Password</label>
         <input v-model="password" id="password" class="form-control" required />
       </div>
+      
       <button type="submit" class="btn btn-primary">Log In</button>
     </form>
 
