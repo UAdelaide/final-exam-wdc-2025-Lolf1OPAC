@@ -3,6 +3,7 @@
 <head>
 <title>dog of the day</title>
 <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+
 createApp({
   setup() {
     const dogI = ref('https://images.dog.ceo/breeds/spaniel-welsh/n02102177_3928.jpg');
@@ -11,6 +12,7 @@ createApp({
     return { dogI, fetchNewDog };
   }
 }).mount('#app');
+
 <style>
   /* Intentionally busy background pattern, distracting */
   body {
@@ -61,14 +63,8 @@ createApp({
 <script>
 const { createApp, ref } = Vue;
 
-createApp({
-  setup() {
-    const dogI = ref('https://images.dog.ceo/breeds/spaniel-welsh/n02102177_3928.jpg');
-    const fetchNewDog = async () =>
-      dogI.value = (await fetch('https://dog.ceo/api/breeds/image/random').then(r => r.json())).message;
-    return { dogI, fetchNewDog };
-  }
-}).mount('#app');
+
+
 </script>
 </body>
 </html>
