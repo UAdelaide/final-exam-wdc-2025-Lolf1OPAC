@@ -19,5 +19,5 @@ VALUES
 ((SELECT dog_id FROM Dogs WHERE name = 'Max'), '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
 ((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),
 ((SELECT dog_id FROM Dogs WHERE name = 'JeffBezos'), '2025-06-20 09:00:00', 3000, 'Nowhere', 'open'),
-((SELECT dog_id FROM Dogs WHERE name = 'Thanos'), '2025-06-20 11:00:00', 3000, 'Nothing', 'open'),
+((SELECT dog_id FROM Dogs WHERE name = 'Thanos'), '2025-06-20 11:00:00', 3000, 'Nothing', 'accepted'),
 ((SELECT dog_id FROM Dogs WHERE name = 'HulkyBoy'), '2025-06-20 08:45:00', 40000, 'Something', 'cancelled');
