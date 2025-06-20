@@ -11,7 +11,7 @@
   <!-- the following code are utilised from the bootstrap 5 documentations for forms -->
   <div id="app" class="container">
   <h2 class="text-primary">Welcome to the Dog<br>Walking Service!</h2>
-    <form @submit.prevent="login">   <!-- prevents  -->
+    <form @submit.prevent="login">   <!-- prevents reloading window and actions are sent to login fucntion -->
       <div class="mb-4">
         <label class="form-label">Username</label>
         <input v-model="username" id="username" type="text" class="form-control" required />
@@ -21,6 +21,7 @@
         <input v-model="password" id="password" class="form-control" required />
       </div>
 
+      
       <button type="submit" class="btn btn-primary">Log In</button>
     </form>
 
