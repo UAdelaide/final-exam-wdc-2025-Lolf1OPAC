@@ -12,7 +12,7 @@ app.use(session({
   secret: 'jesusisking', // encrypts the cookie's session ID that the browsers sends with each request
   resave: false, // do not save session if it was never modified
   cookie: {
-    httpOnly: true,
+    httpOnly: true, // cookie cant be tampered with by client-side js
     maxAge: 1000 * 60 * 60 // 1 hour
   }
 }));
