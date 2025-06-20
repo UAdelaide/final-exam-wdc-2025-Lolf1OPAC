@@ -27,7 +27,7 @@
              <!--
               1) whatever dog is select, its id goes into form.dog_id
               2) loop through entire dog array and create an option for each dog
-              3) sets the actual value (id) of the option to dog.dog_id
+              3) sets the actual value (id) that goes into the form
               -->
             <select v-model="form.dog_id" class="form-select" required>
             <option v-for="dog in dogs" :value="dog.dog_id">
