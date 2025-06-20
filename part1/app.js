@@ -3,13 +3,12 @@ const mysql = require('mysql2/promise');
 const app = express();
 const port = 8080;
 
-const connection = await mysql.createConnection({
+const pool = mysql.createPool({
   host: 'localhost',
   user: 'root',
   password: '',
   database: 'DogWalkService'
 });
-
 
 // /api/dogs
 app.get('/api/dogs', async (req, res) => {
