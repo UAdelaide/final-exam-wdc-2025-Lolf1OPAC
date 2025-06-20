@@ -4,10 +4,6 @@ const db = require('../models/db');
 
 // GET dogs owned by current logged-in owner
 router.get('/mydogs', async (req, res) => {
-  if (!req.session.user) {
-    return res.status(401).json({ error: 'Not logged in' });
-  }
-
   try {
     const ownerId = req.session.user.user_id;
     const [dogs] = await db.query(`
