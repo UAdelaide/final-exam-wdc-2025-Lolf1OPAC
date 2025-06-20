@@ -45,7 +45,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
 // /api/walkers/summary
 app.get('/api/walkers/summary', async (req, res) => {
   try {
-    const [rows] = await pool.query(`
+    const [rows] = await poolQ.query(`
       SELECT
         u.username AS walker_username,
         COUNT(r.rating_id) AS total_ratings,
