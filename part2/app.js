@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const session = require('express-session'); 
+const session = require('express-session');
 require('dotenv').config();
 
 const app = express();
@@ -9,7 +9,7 @@ app.use(express.json());
 
 // ✅ configure session
 app.use(session({
-  secret: 'supersecretkey', // replace this with a strong secret in production
+  secret: 'supersecretkey', // r
   resave: false,
   saveUninitialized: false,
   cookie: {
