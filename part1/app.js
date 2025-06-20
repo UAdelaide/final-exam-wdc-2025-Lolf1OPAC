@@ -27,14 +27,14 @@ app.get('/api/dogs', async (req, res) => {
 // /api/walkrequests/open
 app.get('/api/walkrequests/open', async (req, res) => {
   try {
-    const [req] = await poolQ.query(`
+    const [walkRequestOpen] = await poolQ.query(`
       SELECT wReq.request_id, doggy.name AS dog_name, wReq.requested_time, wReq.duration_minutes, wReq.location, user.username AS owner_username
       FROM WalkRequests wReq
       JOIN Dogs doggy ON wReq.dog_id = doggy.dog_id
       JOIN Users user ON doggy.owner_id = user.user_id
       WHERE wReq.status = 'open';
     `);
-    res.json(req);
+    res.json(walkRequestOpen);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch openwalk requests' });
   }
