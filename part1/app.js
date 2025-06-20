@@ -28,9 +28,9 @@ app.get('/api/dogs', async (req, res) => {
 app.get('/api/walkrequests/open', async (req, res) => {
   try {
     const [rows] = await poolQ.query(`
-      SELECT wReq.request_id, d.name AS dog_name, wReq.requested_time, w.duration_minutes, w.location, u.username AS owner_username
+      SELECT wReq.request_id, d.name AS dog_name, wReq.requested_time, wReq.duration_minutes, wReq.location, u.username AS owner_username
       FROM WalkRequests wReq
-      JOIN Dogs d ON wReq.dog_id = d.dog_id
+      JOIN Dogs doggy ON wReq.dog_id = d.dog_id
       JOIN Users u ON d.owner_id = u.user_id
       WHERE w.status = 'open';
     `);
