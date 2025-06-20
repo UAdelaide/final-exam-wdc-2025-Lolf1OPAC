@@ -43,14 +43,14 @@
       methods: {
         async login() {
           this.error = ''; // clear previous errors when pressing login
-          // interacts with the backend userRoutes.js and send json request to login, then userRoutes retreive info from database and check incoming 
+
+          // interacts with the backend userRoutes.js and send json request to login, then userRoutes retreive info from database and check incoming json and login form match the database or not
           try {
             const res = await fetch('/api/users/login', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ username: this.username, password: this.password })
             });
-
             const result = await res.json();
 
             if (!res.ok) {
